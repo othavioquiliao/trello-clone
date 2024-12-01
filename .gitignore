@@ -10,6 +10,12 @@
 !.yarn/releases
 !.yarn/versions
 
+pnpm-lock.yaml
+bun.lockb
+/pnpm-lock.yaml
+/bun.lockb
+./pnpm-lock.yaml
+./bun.lockb
 # testing
 /coverage
 
