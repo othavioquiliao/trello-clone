@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { siteConfig } from "@/config/site";
+
+export const metadata: Metadata = {
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  icons: [
+    {
+      url: "/icon.png",
+      href: "/icon.png",
+    },
+  ],
+};
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -12,11 +27,6 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-
-export const metadata: Metadata = {
-  title: "Trello Clone",
-  description: "Aplicativo criado para fins de estudo",
-};
 
 export const headingFont = localFont({
   src: "./fonts/font.woff2",
