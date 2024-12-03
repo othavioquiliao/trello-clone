@@ -81,23 +81,35 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
         </PopoverClose>
         <Button
           onClick={onAddCard}
-          className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
+          className=" w-full  justify-center font-normal text-sm"
           variant="ghost"
         >
-          Adicionar cartão...
+          Adicionar cartão
         </Button>
         <form action={onCopy}>
           <input hidden name="id" id="id" value={data.id} readOnly />
-          <input hidden name="boardId" id="boardId" value={data.boardId} readOnly />
-          <FormSubmit>
+          <input
+            hidden
+            name="boardId"
+            id="boardId"
+            value={data.boardId}
+            readOnly
+          />
+          <FormSubmit variant="ghost" className="w-full">
             Fazer uma cópia desta lista
           </FormSubmit>
         </form>
         <Separator />
         <form action={onDelete}>
           <input hidden name="id" id="id" value={data.id} readOnly />
-          <input hidden name="boardId" id="boardId" value={data.boardId} readOnly />
-          <FormSubmit>
+          <input
+            hidden
+            name="boardId"
+            id="boardId"
+            value={data.boardId}
+            readOnly
+          />
+          <FormSubmit variant="ghost" className="w-full hover:bg-red-100">
             Deletar esta lista
           </FormSubmit>
         </form>

@@ -15,15 +15,14 @@ interface FormSubmitProps {
     | "outline"
     | "secondary"
     | "ghost"
-    | "link"
-    | "primary";
+    | "link";
 }
 
 export const FormSubmit = ({
   children,
   disabled,
   className,
-  variant = "default",
+  variant,
 }: FormSubmitProps) => {
   const { pending } = useFormStatus();
 
@@ -31,7 +30,7 @@ export const FormSubmit = ({
     <Button
       disabled={pending || disabled}
       type="submit"
-      variant={"default"}
+      variant={variant}
       size="sm"
       className={cn(className)}
     >
