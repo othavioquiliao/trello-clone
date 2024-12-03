@@ -3,6 +3,8 @@
 import { toast } from "sonner";
 import { useEffect, useState } from "react";
 import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { cn } from "@/lib/utils";
 
 import { ListWithCards } from "@/types";
 
@@ -38,6 +40,7 @@ function reorder<T>(list: T[], startIndex: number, endIndex: number) {
 
 export const ListContainer = ({ data, boardId }: ListContainerProps) => {
   const [orderedData, setOrderedData] = useState(data);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const { execute: executeUpdateListOrder } = useAction(updateListOrder, {
     onSuccess: () => {
@@ -162,19 +165,26 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Droppable droppableId="lists" type="list" direction="horizontal">
+      <Droppable
+        droppableId="lists"
+        type="list"
+        direction={isMobile ? "vertical" : "horizontal"}
+        ignoreContainerClipping={!isMobile}
+      >
         {(provided) => (
           <ol
             {...provided.droppableProps}
             ref={provided.innerRef}
-            className="flex gap-x-3 h-full"
+            className={cn(
+              "flex gap-3 h-full flex-col items-center md:flex-row md:items-start"
+            )}
           >
             {orderedData.map((list, index) => {
               return <ListItem key={list.id} index={index} data={list} />;
             })}
             {provided.placeholder}
             <ListForm />
-            <div className="flex-shrink-0 w-1" />
+            <div className={isMobile ? "h-2" : "w-2"} />
           </ol>
         )}
       </Droppable>

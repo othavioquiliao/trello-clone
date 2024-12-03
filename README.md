@@ -35,7 +35,7 @@ A Documentação mostra como rodar o projeto localmente, mas aqui esta ele apos 
 ## 📋 Pré-requisitos
 
 - Node.js 18+
-- PNPM (recomendado) ou NPM
+- PNPM pois, o NPM esta dando erro de compatibilidade com o Next.js 15 + Hello Pangea DND
 - Uma conta no [Clerk](https://clerk.com) para autenticação
 - Uma conta no [Unsplash](https://unsplash.com/developers) para as imagens
 - Docker instalado
