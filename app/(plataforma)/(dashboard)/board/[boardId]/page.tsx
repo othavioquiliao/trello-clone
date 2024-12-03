@@ -12,6 +12,7 @@ interface BoardIdPageProps {
 }
 
 const BoardIdPage = async ({ params }: BoardIdPageProps) => {
+  const boardId = params.boardId;
   const { orgId } = await auth();
 
   if (!orgId) {
@@ -20,7 +21,7 @@ const BoardIdPage = async ({ params }: BoardIdPageProps) => {
 
   const lists = await db.list.findMany({
     where: {
-      boardId: params.boardId,
+      boardId: boardId,
       board: {
         orgId,
       },
@@ -39,7 +40,7 @@ const BoardIdPage = async ({ params }: BoardIdPageProps) => {
 
   return (
     <div className="p-4 h-full overflow-x-auto">
-      <ListContainer boardId={params.boardId} data={lists} />
+      <ListContainer boardId={boardId} data={lists} />
     </div>
   );
 };

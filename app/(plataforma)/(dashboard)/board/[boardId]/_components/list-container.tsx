@@ -31,7 +31,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
 
   const { execute: executeUpdateListOrder } = useAction(updateListOrder, {
     onSuccess: () => {
-      toast.success("List reordered");
+      toast.success("Lista reorganizada");
     },
     onError: (error) => {
       toast.error(error);
@@ -40,7 +40,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
 
   const { execute: executeUpdateCardOrder } = useAction(updateCardOrder, {
     onSuccess: () => {
-      toast.success("Card reordered");
+      toast.success("Cartão reorganizado");
     },
     onError: (error) => {
       toast.error(error);
@@ -58,7 +58,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
       return;
     }
 
-    // if dropped in the same position
+    // se soltar na mesma posição
     if (
       destination.droppableId === source.droppableId &&
       destination.index === source.index
@@ -66,7 +66,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
       return;
     }
 
-    // User moves a list
+    // O usuário move uma lista
     if (type === "list") {
       const items = reorder(orderedData, source.index, destination.index).map(
         (item, index) => ({ ...item, order: index })
@@ -76,11 +76,11 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
       executeUpdateListOrder({ items, boardId });
     }
 
-    // User moves a card
+    // O usuário move um cartão
     if (type === "card") {
       let newOrderedData = [...orderedData];
 
-      // Source and destination list
+      // Lista de origem e destino
       const sourceList = newOrderedData.find(
         (list) => list.id === source.droppableId
       );
@@ -92,17 +92,17 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
         return;
       }
 
-      // Check if cards exists on the sourceList
+      // Verifica se existem cartões na sourceList
       if (!sourceList.cards) {
         sourceList.cards = [];
       }
 
-      // Check if cards exists on the destList
+      // Verifica se existem cartões na destList
       if (!destList.cards) {
         destList.cards = [];
       }
 
-      // Moving the card in the same list
+      // Movendo o cartão na mesma lista
       if (source.droppableId === destination.droppableId) {
         const reorderedCards = reorder(
           sourceList.cards,
@@ -121,22 +121,22 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
           boardId: boardId,
           items: reorderedCards,
         });
-        // User moves the card to another list
+        // O usuário move o cartão para outra lista
       } else {
-        // Remove card from the source list
+        // Remove o cartão da lista de origem
         const [movedCard] = sourceList.cards.splice(source.index, 1);
 
-        // Assign the new listId to the moved card
+        // Atribui o novo listId ao cartão movido
         movedCard.listId = destination.droppableId;
 
-        // Add card to the destination list
+        // Adiciona o cartão à lista de destino
         destList.cards.splice(destination.index, 0, movedCard);
 
         sourceList.cards.forEach((card, idx) => {
           card.order = idx;
         });
 
-        // Update the order for each card in the destination list
+        // Atualiza a ordem de cada cartão na lista de destino
         destList.cards.forEach((card, idx) => {
           card.order = idx;
         });

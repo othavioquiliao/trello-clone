@@ -24,7 +24,7 @@ const MarketingPage = () => {
           Numero 1 Gerenciador de tarefas
         </div>
         <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6 ">
-          Tarafes ajudam equipes
+          Tarefas ajudam equipes
         </h1>
         <div className="text-3xl md:text-6xl bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4  py-2 rounded-md w-fit">
           avançar juntos.

@@ -77,11 +77,11 @@ export const ListForm = () => {
             errors={fieldErrors}
             id="title"
             className="text-sm px-2 py-1 h-7 font-medium border-transparent hover:border-input focus:border-input transition"
-            placeholder="Enter list title..."
+            placeholder="Digite um título para esta lista..."
           />
           <input hidden value={params.boardId} name="boardId" readOnly />
           <div className="flex items-center gap-x-1">
-            <FormSubmit>Add list</FormSubmit>
+            <FormSubmit>Adicionar lista</FormSubmit>
             <Button onClick={disableEditing} size="sm" variant="ghost">
               <X className="h-5 w-5" />
             </Button>
@@ -98,7 +98,7 @@ export const ListForm = () => {
         className="w-full rounded-md bg-white/80 hover:bg-white/50 transition p-3 flex items-center font-medium text-sm"
       >
         <Plus className="h-4 w-4 mr-2" />
-        Add a list
+        Adicionar lista
       </button>
     </ListWrapper>
   );

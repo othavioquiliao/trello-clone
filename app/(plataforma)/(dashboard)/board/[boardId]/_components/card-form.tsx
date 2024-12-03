@@ -26,7 +26,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
 
     const { execute, fieldErrors } = useAction(createCard, {
       onSuccess: (data) => {
-        toast.success(`Card "${data.title}" created`);
+        toast.success(`Card "${data.title}" criado`);
         formRef.current?.reset();
       },
       onError: (error) => {
@@ -65,18 +65,18 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
         <form
           ref={formRef}
           action={onSubmit}
-          className="m-1 py-0.5 px-1 space-y-4"
+          className="m-1 py-0.5 px-1 space-y-4 bg-white rounded-md shadow-md"
         >
           <FormTextarea
             id="title"
             onKeyDown={onTextareakeyDown}
             ref={ref}
-            placeholder="Enter a title for this card..."
+            placeholder="Digite um título para este card..."
             errors={fieldErrors}
           />
           <input hidden id="listId" name="listId" value={listId} readOnly />
           <div className="flex items-center gap-x-1">
-            <FormSubmit>Add card</FormSubmit>
+            <FormSubmit>Adicionar card</FormSubmit>
             <Button onClick={disableEditing} size="sm" variant="ghost">
               <X className="h-5 w-5" />
             </Button>
@@ -94,7 +94,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
           variant="ghost"
         >
           <Plus className="h-4 w-4 mr-2" />
-          Add a card
+          Adicionar card
         </Button>
       </div>
     );

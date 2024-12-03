@@ -69,7 +69,7 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
       </PopoverTrigger>
       <PopoverContent className="px-0 pt-3 pb-3" side="bottom" align="start">
         <div className="text-sm font-medium text-center text-neutral-600 pb-4">
-          List actions
+          Ações da lista
         </div>
         <PopoverClose ref={closeRef} asChild>
           <Button
@@ -84,16 +84,16 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
           className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
           variant="ghost"
         >
-          Add card...
+          Adicionar cartão...
         </Button>
         <form action={onCopy}>
           <input hidden name="id" id="id" value={data.id} />
           <input hidden name="boardId" id="boardId" value={data.boardId} />
           <FormSubmit
-            variant="ghost"
-            className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
+            variant="default"
+            className="rounded-none  bg-white text-black hover:bg-gray-100 w-full h-auto p-2 px-5 justify-start font-normal text-sm"
           >
-            Copy list...
+            Fazer uma cópia desta lista
           </FormSubmit>
         </form>
         <Separator />
@@ -101,11 +101,11 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
           <input hidden name="id" id="id" value={data.id} />
           <input hidden name="boardId" id="boardId" value={data.boardId} />
           <FormSubmit
-            variant="ghost"
-            className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm text-red-500 hover:bg-red-50 hover:text-red-600"
+            variant="default"
+            className="rounded-none w-full h-auto p-2 bg-white px-5 justify-start font-normal text-sm text-red-500 hover:bg-red-50 hover:text-red-600"
           >
             <div className="flex items-center justify-between w-full">
-              <div>Delete this list</div>
+              <div>Deletar esta lista</div>
               <div>
                 <Trash2 className="h-4 w-4" />
               </div>

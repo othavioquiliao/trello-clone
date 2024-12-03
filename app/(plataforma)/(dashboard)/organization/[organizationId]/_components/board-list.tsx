@@ -8,8 +8,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { FormPopover } from "@/components/form/form-popover";
 import { Hint } from "@/components/hint";
 
-import { getAvailableCount } from "@/lib/org-limit";
-
 export const BoardList = async () => {
   const { orgId } = await auth();
 
@@ -25,8 +23,6 @@ export const BoardList = async () => {
       createdAt: "desc",
     },
   });
-
-  const availableCount = await getAvailableCount();
 
   return (
     <div className="space-y-4">
@@ -52,11 +48,10 @@ export const BoardList = async () => {
             className="aspect-video relative h-full w-full bg-muted rounded-sm flex flex-col gap-y-1 items-center justify-center hover:opacity-75 transition"
           >
             <p className="text-sm">Criar novo quadro</p>
-            <span className="text-xs">{availableCount} restantes</span>
             <Hint
               sideOffset={40}
               description={`
-                Workspaces gratuitos podem ter até 5 quadros abertos. Para quadros ilimitados, faça upgrade deste workspace.
+               Aqui você pode criar quadros para organizar suas tarefas.
               `}
             >
               <HelpCircle className="absolute bottom-2 right-2 h-[14px] w-[14px]" />

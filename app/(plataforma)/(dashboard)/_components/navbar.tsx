@@ -12,7 +12,7 @@ export const Navbar = () => {
         <div className="hidden md:flex mr-3">
           <Logo />
         </div>
-        <Button
+        {/* <Button
           size="sm"
           variant="outline"
           className="rounded-sm border-[#FC4E0A] hover:bg-[#FC4E0A] hover:text-white hidden md:block h-auto py-1.5 px-3"
@@ -25,7 +25,7 @@ export const Navbar = () => {
           className="rounded-sm block border-[#FC4E0A] md:hidden hover:bg-[#FC4E0A] hover:text-white"
         >
           <Plus className="h-4 w-4" />
-        </Button>
+        </Button> */}
       </div>
       <div className="ml-auto flex items-center gap-x-2">
         <OrganizationSwitcher
