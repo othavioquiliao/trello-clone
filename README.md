@@ -2,9 +2,9 @@
 
 Uma aplicação de gerenciamento de tarefas inspirada no Trello, desenvolvida com Next.js 15 e TypeScript.
 
-A Documentação mostra como rodar o projeto localmente, mas aqui esta ele apos o deploy no vercel.
+A Documentação mostra como rodar o projeto localmente, usando docker compose para o banco de dados Postgres, o arquivo .env.example mostra as variáveis de ambiente necessárias para rodar o projeto.
 
-[Trello Clone](link)
+Deixei disponível o .env para teste, em seguida, irei remover, e subir novamente o projeto.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -23,7 +23,7 @@ A Documentação mostra como rodar o projeto localmente, mas aqui esta ele apos 
 - Lucide React (Ícones)
 - Sonner (Toasts)
 - Shadcn/ui (Componentes)
-- Hello Pangea DND (Drag and Drop)
+- Hello Pangea DND (Drag and Drop) - Causador diversos problemas devido ao Next.js 15, mas o projeto foi concluído.
 
 ### Utilitários
 
