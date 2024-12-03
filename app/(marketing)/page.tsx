@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Medal } from "lucide-react";
 import Link from "next/link";
 import { headingFont } from "../layout";
 import { Poppins } from "next/font/google";
+import Image from "next/image";
+import plataform from "@/public/plataform.png";
 
 const textFont = Poppins({
   subsets: ["latin"],
@@ -12,37 +12,36 @@ const textFont = Poppins({
 
 const MarketingPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="flex items-center flex-col justify-center">
-        <div
-          className={cn(
-            "mb-4 flex items-center border shadow-sm p-4 bg-amber-100 text-amber-700 rounded-full uppercase",
-            headingFont.className
-          )}
+    <div className="flex flex-col  md:flex-row w-full justify-center h-full items-center">
+      <div className="flex gap-6 flex-col px-4 mb-5 md:mb-0 md:pl-32 justify-center items-start h-1/2 md:h-full w-full md:w-1/2 ">
+        <h1
+          className={`text-3xl md:leading-snug md:text-start md:text-6xl font-semibold text-neutral-800 ${textFont.className}`}
         >
-          <Medal className="h-6 w-6 mr-2" />
-          Numero 1 Gerenciador de tarefas
-        </div>
-        <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6 ">
-          Tarefas ajudam equipes
+          <span className="underline decoration-red-orange decoration-[solid decoration-[13px]  underline-offset-[5px]">
+            Uma
+          </span>{" "}
+          plataforma para otimizar qualquer fluxo <br /> de trabalho
         </h1>
-        <div className="text-3xl md:text-6xl bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4  py-2 rounded-md w-fit">
-          avançar juntos.
-        </div>
+        <p className="text-zinc-700 md:text-start text-xl ">
+          Organize e gerencie seus projetos de forma intuitiva e colaborativa,{" "}
+          <br />
+          aumentando a produtividade da sua equipe.
+        </p>
+        <Button
+          size="lg"
+          className="bg-red-orange hover:bg-orange-600 text-lg font-semibold "
+        >
+          <Link href="/sign-up">Teste gratuitamente</Link>
+        </Button>
       </div>
-      <div
-        className={cn(
-          "mt-4 max-w-xs md:max-w-2xl mx-auto text-center text-sm md:text-xl text-neutral-400",
-          textFont.className
-        )}
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum hic ab
-        quisquam est labore, fugit quibusdam esse?
+
+      <div className="flex hidden md:flex justify-center items-center h-1/2 md:h-full w-full md:w-1/2">
+        <Image
+          className="max-w-[70%] max-h-[70%]"
+          src={plataform}
+          alt="Imagem ilustrativa da plataforma"
+        />
       </div>
-      <Button className="mt-4" size="lg" asChild>
-        <Link href="/sign-up">Começar agora</Link>
-      </Button>
     </div>
   );
 };
