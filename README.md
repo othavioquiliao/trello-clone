@@ -4,7 +4,7 @@ Uma aplicação de gerenciamento de tarefas inspirada no Trello, desenvolvida co
 
 A Documentação mostra como rodar o projeto localmente, mas aqui esta ele apos o deploy no vercel.
 
-[Trello Clone](https://trello-clone-git-main-lucas-santos-dev.vercel.app/)
+[Trello Clone](link)
 
 ## 🚀 Tecnologias Utilizadas
 
