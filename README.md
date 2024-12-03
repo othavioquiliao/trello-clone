@@ -54,7 +54,7 @@ git clone https://github.com/othavioquiliao/trello-clone.git
 pnpm install
 ```
 
-### 3. Configure as variáveis de ambiente
+### 3. Configure as variáveis de ambiente (Incluido no .env)
 
 ```bash
   # Clerk Auth
