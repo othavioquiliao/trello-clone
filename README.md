@@ -36,8 +36,8 @@ Deixei disponível o .env para teste, em seguida, irei remover, e subir novament
 
 - Node.js 18+
 - PNPM pois, o NPM esta dando erro de compatibilidade com o Next.js 15 + Hello Pangea DND
-- Uma conta no [Clerk](https://clerk.com) para autenticação
-- Uma conta no [Unsplash](https://unsplash.com/developers) para as imagens
+- Uma conta no [Clerk](https://clerk.com) para autenticação (Incluso no .env)
+- Uma conta no [Unsplash](https://unsplash.com/developers) para as imagens (Incluso no .env)
 - Docker instalado
 
 ## 🔧 Instalação
