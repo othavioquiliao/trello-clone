@@ -38,7 +38,7 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
 
   const { execute: executeCopy } = useAction(copyList, {
     onSuccess: (data) => {
-      toast.success(`Lista "${data.title}" copiada`); 
+      toast.success(`Lista "${data.title}" copiada`);
       closeRef.current?.click();
     },
     onError: (error) => {
@@ -87,28 +87,16 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
           Adicionar cartão
         </Button>
         <form action={onCopy}>
-          <input hidden name="id" id="id" value={data.id} readOnly />
-          <input
-            hidden
-            name="boardId"
-            id="boardId"
-            value={data.boardId}
-            readOnly
-          />
+          <input hidden name="id" id="id" value={data.id} />
+          <input hidden name="boardId" id="boardId" value={data.boardId} />
           <FormSubmit variant="ghost" className="w-full">
             Fazer uma cópia desta lista
           </FormSubmit>
         </form>
         <Separator />
         <form action={onDelete}>
-          <input hidden name="id" id="id" value={data.id} readOnly />
-          <input
-            hidden
-            name="boardId"
-            id="boardId"
-            value={data.boardId}
-            readOnly
-          />
+          <input hidden name="id" id="id" value={data.id} />
+          <input hidden name="boardId" id="boardId" value={data.boardId} />
           <FormSubmit variant="ghost" className="w-full hover:bg-red-100">
             Deletar esta lista
           </FormSubmit>
