@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { headingFont } from "../layout";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import plataform from "@/public/plataform.png";

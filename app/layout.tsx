@@ -29,7 +29,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const headingFont = localFont({
+const headingFont = localFont({
   src: "./fonts/font.woff2",
 });
 

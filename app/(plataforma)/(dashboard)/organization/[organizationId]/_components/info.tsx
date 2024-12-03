@@ -21,7 +21,7 @@ export const Info = () => {
       </div>
       <div className="space-y-1">
         <p className="text-xs text-muted-foreground">Organização:</p>
-        <p className="font-semibold text-xl">{organization?.name}</p>
+        <p className="font-semibold text-xl">{organization?.name || ""}</p>
       </div>
     </div>
   );

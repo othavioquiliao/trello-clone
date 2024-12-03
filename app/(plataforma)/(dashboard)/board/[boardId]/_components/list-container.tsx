@@ -2,7 +2,7 @@
 
 import { toast } from "sonner";
 import { useEffect, useState } from "react";
-import { DragDropContext, Droppable } from "@hello-pangea/dnd";
+import { DragDropContext, Droppable, DropResult } from "@hello-pangea/dnd";
 
 import { ListWithCards } from "@/types";
 
@@ -16,6 +16,16 @@ import { updateCardOrder } from "@/actions/update-card-order";
 interface ListContainerProps {
   data: ListWithCards[];
   boardId: string;
+}
+
+interface Card {
+  id: string;
+  title: string;
+  order: number;
+  listId: string;
+  description: string | null;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 function reorder<T>(list: T[], startIndex: number, endIndex: number) {
@@ -51,7 +61,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
     setOrderedData(data);
   }, [data]);
 
-  const onDragEnd = (result: any) => {
+  const onDragEnd = (result: DropResult) => {
     const { destination, source, type } = result;
 
     if (!destination) {
@@ -78,7 +88,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
 
     // O usuário move um cartão
     if (type === "card") {
-      let newOrderedData = [...orderedData];
+      const newOrderedData = [...orderedData];
 
       // Lista de origem e destino
       const sourceList = newOrderedData.find(
@@ -104,13 +114,13 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
 
       // Movendo o cartão na mesma lista
       if (source.droppableId === destination.droppableId) {
-        const reorderedCards = reorder(
+        const reorderedCards = reorder<Card>(
           sourceList.cards,
           source.index,
           destination.index
         );
 
-        reorderedCards.forEach((card, idx) => {
+        reorderedCards.forEach((card: Card, idx: number) => {
           card.order = idx;
         });
 
@@ -132,12 +142,12 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
         // Adiciona o cartão à lista de destino
         destList.cards.splice(destination.index, 0, movedCard);
 
-        sourceList.cards.forEach((card, idx) => {
+        sourceList.cards.forEach((card: Card, idx: number) => {
           card.order = idx;
         });
 
         // Atualiza a ordem de cada cartão na lista de destino
-        destList.cards.forEach((card, idx) => {
+        destList.cards.forEach((card: Card, idx: number) => {
           card.order = idx;
         });
 
