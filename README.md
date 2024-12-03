@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trello Clone
 
-## Getting Started
+Uma aplicação de gerenciamento de tarefas inspirada no Trello, desenvolvida com Next.js 15 e TypeScript.
 
-First, run the development server:
+A Documentação mostra como rodar o projeto localmente, mas aqui esta ele apos o deploy no vercel.
+
+[Trello Clone](https://trello-clone-git-main-lucas-santos-dev.vercel.app/)
+
+## 🚀 Tecnologias Utilizadas
+
+### Core
+
+- Next.js 15
+- TypeScript
+- Prisma (ORM)
+- Clerk (Autenticação)
+- Tailwind CSS
+- Zod (Validação)
+- Postgres
+
+### UI/UX
+
+- Lucide React (Ícones)
+- Sonner (Toasts)
+- Shadcn/ui (Componentes)
+- Hello Pangea DND (Drag and Drop)
+
+### Utilitários
+
+- Lodash
+- usehooks-ts
+- Zustand (Gerenciamento de Estado)
+- Unsplash API (Imagens)
+
+## 📋 Pré-requisitos
+
+- Node.js 18+
+- PNPM (recomendado) ou NPM
+- Uma conta no [Clerk](https://clerk.com) para autenticação
+- Uma conta no [Unsplash](https://unsplash.com/developers) para as imagens
+- Docker instalado
+
+## 🔧 Instalação
+
+### 1. Clone o repositório
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/seu-usuario/seu-repositorio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Instale as dependências
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Configure as variáveis de ambiente
 
-## Learn More
+Clerk Auth
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+   CLERK_SECRET_KEY=
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Database - Postgres
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+DATABASE_URL=
+```
 
-## Deploy on Vercel
+Local com docker compose
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+DATABASE_URL=postgresql://postgres_db:trello_db@localhost:4444/trello_db
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Unsplash
+
+```bash
+NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=
+```
+
+### 4. Conecte ao banco de dados
+
+```bash
+docker compose up
+```
+
+### 5. Execute as migrações do Prisma
+
+```bash
+pnpm prisma generate
+pnpm prisma db push
+```
+
+### 6. Inicie o servidor de desenvolvimento
+
+```bash
+pnpm dev
+```
