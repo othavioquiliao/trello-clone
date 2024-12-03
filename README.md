@@ -23,7 +23,7 @@ Deixei disponível o .env para teste, em seguida, irei remover, e subir novament
 - Lucide React (Ícones)
 - Sonner (Toasts)
 - Shadcn/ui (Componentes)
-- Hello Pangea DND (Drag and Drop) - Causador diversos problemas devido ao Next.js 15, mas o projeto foi concluído.
+- Hello Pangea DND (Drag and Drop)
 
 ### Utilitários
 
