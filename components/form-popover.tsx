@@ -81,7 +81,7 @@ export const FormPopover = ({
             <FormPicker id="image" errors={fieldErrors} />
             <FormInput
               id="title"
-              label="Board title"
+              label="Título do quadro"
               type="text"
               errors={fieldErrors}
             />
