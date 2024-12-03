@@ -56,31 +56,22 @@ pnpm install
 
 ### 3. Configure as variáveis de ambiente
 
-Clerk Auth
-
 ```bash
+  # Clerk Auth
+
    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
    CLERK_SECRET_KEY=
    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-```
 
-Database - Postgres
+  #  Database - Postgres local
+   DATABASE_URL=postgresql://postgres_db:trello_db@localhost:4444/trello_db
+  #  ou
+  #  Database - Postgres local
+  #  DATABASE_URL=
 
-```bash
-DATABASE_URL=
-```
-
-Local com docker compose
-
-```bash
-DATABASE_URL=postgresql://postgres_db:trello_db@localhost:4444/trello_db
-```
-
-Unsplash
-
-```bash
-NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=
+  #  Unsplash
+   NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=
 ```
 
 ### 4. Conecte ao banco de dados
