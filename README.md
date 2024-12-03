@@ -74,7 +74,7 @@ pnpm install
    NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=
 ```
 
-### 4. Conecte ao banco de dados
+### 4. Rodar o banco de dados para realizar as migrações
 
 ```bash
 docker compose up
