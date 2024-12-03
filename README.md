@@ -45,7 +45,7 @@ Deixei disponível o .env para teste, em seguida, irei remover, e subir novament
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/othavioquiliao/trello-clone.git
 ```
 
 ### 2. Instale as dependências
